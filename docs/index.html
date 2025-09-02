@@ -1,1 +1,360 @@
-test
+<!--  -->
+
+
+<!--  -->
+<DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Laravel</title>
+<meta name="description" itemprop="description" content="Top Page">
+<meta name="keywords" itemprop="keywords" content="Home">
+<meta name="csrf-token" content="UptGzsUWlIVj0HURJUA5mSapIdGpMHZERdyf75uu">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
+<!-- Fontaweome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js"></script> -->
+<!-- MyCss -->
+<link href="http://localhost/css/mystyle.css" rel="stylesheet">
+<!-- Code Pre -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+<!-- Animate -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body>
+
+
+<header class="header">
+
+</header>
+ 
+<div class="contents">
+    <div class="main animate__animated animate__fadeIn">
+        <div class="container-fluid">
+            <div class="row flex-nowrap">
+                <!-- Sidebar -->
+                <aside class="col-auto col-md-2 col-sm-1 col-xl-2 px-sm-2 px-0 back-color">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-sm-1 px-md-3 pt-md-2 text-white min-vh-100 sticky-top">
+                        
+                        <!-- Menu Toggle -->
+                        <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            <span class="fs-5">
+                                <i class="fas fa-bars"></i>
+                                <span class="d-none d-lg-inline ms-2">Menu</span>
+                            </span>
+                        </a>
+
+                        <!-- Nav Menu -->
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                            <li>
+    <a href="http://localhost/home" class="nav-link px-0 align-middle text-white">
+        
+        <div class="d-lg-none py-2 px-3 w-100 text-center">
+            <i class="fas fa-tachometer-alt fa-lg"></i>
+        </div>
+        
+        <div class="d-none d-lg-block">
+            <i class="fas fa-tachometer-alt fa-lg"></i>
+            <span class="ms-2 d-sm-inline">Dashboard</span>
+        </div>
+    </a>
+</li>
+
+                                                            <li>
+    <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+        <div class="d-lg-none mt-2 mb-2"><i class="fa-solid fa-money-bill-trend-up fa-lg"></i></div>
+        <div class="d-none d-lg-block"><i class="fa-solid fa-money-bill-trend-up fa-lg"></i><span class="ms-2 d-none d-sm-inline">Asset</span></div>
+    </a>
+    <ul class="collapse nav flex-column ms-1 " id="submenu1" data-bs-parent="#menu">
+                    <li class="w-100">
+                <a href="http://localhost/asset" class="nav-link px-0 text-white">
+                    <small>
+                        <i class="fas fa-database"></i>                        <span class="ms-2 d-none d-sm-inline">Money</span>
+                    </small>
+                </a>
+            </li>
+                    <li class="w-100">
+                <a href="http://localhost/bond" class="nav-link px-0 text-white">
+                    <small>
+                        <i class="fas fa-bold"></i>                        <span class="ms-2 d-none d-sm-inline">Bond</span>
+                    </small>
+                </a>
+            </li>
+                    <li class="w-100">
+                <a href="http://localhost/stock" class="nav-link px-0 text-white">
+                    <small>
+                        <i class="fas fa-chart-line"></i>                        <span class="ms-2 d-none d-sm-inline">Stock</span>
+                    </small>
+                </a>
+            </li>
+                    <li class="w-100">
+                <a href="http://localhost/saving" class="nav-link px-0 text-white">
+                    <small>
+                        <i class="fas fa-university"></i>                        <span class="ms-2 d-none d-sm-inline">Saving</span>
+                    </small>
+                </a>
+            </li>
+                    <li class="w-100">
+                <a href="http://localhost/other" class="nav-link px-0 text-white">
+                    <small>
+                        <i class="fas fa-otter"></i>                        <span class="ms-2 d-none d-sm-inline">Other</span>
+                    </small>
+                </a>
+            </li>
+                    <li class="w-100">
+                <a href="http://localhost/rate" class="nav-link px-0 text-white">
+                    <small>
+                        <i class="fas fa-percent"></i>                        <span class="ms-2 d-none d-sm-inline">Rate</span>
+                    </small>
+                </a>
+            </li>
+            </ul>
+</li>
+
+                                <li>
+    <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+        <div class="d-lg-none mt-2 mb-2"><i class="fa-solid fa-arrow-trend-up fa-lg"></i></div>
+        <div class="d-none d-lg-block"><i class="fa-solid fa-arrow-trend-up fa-lg"></i><span class="ms-2 d-none d-sm-inline">Setting</span></div>
+    </a>
+    <ul class="collapse nav flex-column ms-1 " id="submenu2" data-bs-parent="#menu">
+                    <li class="w-100">
+                <a href="http://localhost/country" class="nav-link px-0 text-white">
+                    <small>
+                        <i class="fas fa-globe-europe"></i>                        <span class="ms-2 d-none d-sm-inline">Country</span>
+                    </small>
+                </a>
+            </li>
+                    <li class="w-100">
+                <a href="http://localhost/company" class="nav-link px-0 text-white">
+                    <small>
+                        <i class="far fa-building"></i>                        <span class="ms-2 d-none d-sm-inline">Company</span>
+                    </small>
+                </a>
+            </li>
+                    <li class="w-100">
+                <a href="http://localhost/bank" class="nav-link px-0 text-white">
+                    <small>
+                        <i class="fas fa-money-check-alt"></i>                        <span class="ms-2 d-none d-sm-inline">Banks</span>
+                    </small>
+                </a>
+            </li>
+            </ul>
+</li>
+                            
+                            <li>
+    <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
+        <div class="d-lg-none mt-2 mb-2"><i class="fas fa-sign-out-alt fa-lg"></i></div>
+        <div class="d-none d-lg-block"><i class="fas fa-sign-out-alt fa-lg"></i><span class="ms-2 d-none d-sm-inline">Test Taro</span></div>
+    </a>
+    <ul class="collapse nav flex-column ms-1 " id="submenu3" data-bs-parent="#menu">
+                    <li class="w-100">
+                <a href="http://localhost/asset" class="nav-link px-0 text-white">
+                    <small>
+                                                <span class="ms-2 d-none d-sm-inline">Logout</span>
+                    </small>
+                </a>
+            </li>
+            </ul>
+</li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="col col-md-10 col-sm-11 col-xl-10 py-3">
+                    <script src="http://localhost/js/home.js"></script>
+<div class="container">
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-12">
+            <div class="card shadow mb-3">
+                <div class="card-header"><i class="fas fa-columns"></i> Dashboard</div>
+                <div class="card-body">
+                    <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
+                        <!-- Circle Graph -->
+                        <!-- Stock -->
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-title"><i class="fas fa-circle"></i> Stock (¥36,803,842)</p>
+                                    <canvas class="" id="myCircleStock"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Saving -->
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-title"><i class="fas fa-circle"></i> Saving (¥6,958,367)</p>
+                                    <canvas class="" id="myCircleSaving"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bond -->
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-title"><i class="fas fa-circle"></i> Bond (¥6,170,340)</p>
+                                    <canvas class="" id="myCircleBond"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Other -->
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-title"><i class="fas fa-circle"></i> Other (¥16,436,244)</p>
+                                    <canvas class="" id="myCircleOther"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Total -->
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-title"><i class="fas fa-circle"></i> Total (¥66,368,793)</p>
+                                    <canvas class="" id="myCircleTotal"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Overview -->
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body shadow-sm">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><i class="fas fa-circle"></i> <span class="fw-bold">Month</span> : 2025/10</li>
+                                        <li class="list-group-item">Rate : $1 = ¥146</li>
+                                        <li class="list-group-item">Total : ¥66,368,793</li>
+                                        <li class="list-group-item">Saving : ¥6,958,367</li>
+                                        <li class="list-group-item">Stock : ¥36,803,842 (= $252,081)</li>
+                                        <li class="list-group-item">Others : ¥16,436,244</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Monthly Asset Chart -->
+                    <div class="card mb-4">
+                        <div class="card-body shadow-sm">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                    <!-- Asset -->
+                    <div class="row">
+                        <div class="col mt-3">
+                            <p class="h4"><i class="fas fa-circle"></i> Monthly Asset</p>
+                            <div class="table-responsive">
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Bank JP</th>
+                                            <th scope="col">Bank US</th>
+                                            <th scope="col">Cash JP</th>
+                                            <th scope="col">Cash US</th>
+                                            <th scope="col">Stock US</th>
+                                            <th scope="col">Bonds</th>
+                                            <th scope="col">IDECO</th>
+                                            <th scope="col">Invenstment</th>
+                                            <th scope="col">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                                                                <tr>
+                                            <td>2025/10</td>
+                                            <td>¥4,997,431</td>
+                                            <td>¥970,055</td>
+                                            <td>¥838,437</td>
+                                            <td>¥152,444</td>
+                                            <td>¥36,803,842</td>
+                                            <td>¥6,170,340</td>
+                                            <td>¥2,857,934</td>
+                                            <td>¥13,578,310</td>
+                                            <td>¥66,368,793</td>
+                                            <td></td>
+                                        </tr>
+                                                                                <tr>
+                                            <td>2025/09</td>
+                                            <td>¥4,997,431</td>
+                                            <td>¥976,832</td>
+                                            <td>¥838,437</td>
+                                            <td>¥153,509</td>
+                                            <td>¥37,060,965</td>
+                                            <td>¥6,213,447</td>
+                                            <td>¥2,857,934</td>
+                                            <td>¥13,578,310</td>
+                                            <td>¥66,676,865</td>
+                                            <td></td>
+                                        </tr>
+                                                                                <tr>
+                                            <td>2025/08</td>
+                                            <td>¥4,817,255</td>
+                                            <td>¥1,001,548</td>
+                                            <td>¥938,350</td>
+                                            <td>¥237,495</td>
+                                            <td>¥36,535,407</td>
+                                            <td>¥6,270,157</td>
+                                            <td>¥2,799,622</td>
+                                            <td>¥13,338,618</td>
+                                            <td>¥65,938,452</td>
+                                            <td></td>
+                                        </tr>
+                                                                                <tr>
+                                            <td>2025/07</td>
+                                            <td>¥5,150,255</td>
+                                            <td>¥956,899</td>
+                                            <td>¥1,008,123</td>
+                                            <td>¥0</td>
+                                            <td>¥34,705,630</td>
+                                            <td>¥6,032,203</td>
+                                            <td>¥2,621,589</td>
+                                            <td>¥12,820,007</td>
+                                            <td>¥63,294,706</td>
+                                            <td></td>
+                                        </tr>
+                                                                                <tr>
+                                            <td>2025/06</td>
+                                            <td>¥5,172,563</td>
+                                            <td>¥956,700</td>
+                                            <td>¥1,331,683</td>
+                                            <td>¥0</td>
+                                            <td>¥34,436,326</td>
+                                            <td>¥5,857,559</td>
+                                            <td>¥2,524,231</td>
+                                            <td>¥12,372,139</td>
+                                            <td>¥62,651,201</td>
+                                            <td></td>
+                                        </tr>
+                                                                            </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+</footer>
+</body>
+</html>
