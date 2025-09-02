@@ -1,0 +1,27 @@
+.main{
+    background-color: #FAFAFA;
+}
+
+.back-color{
+    background-color: #01205F;
+    /* background-color: #08088A; */
+}
+
+.border-bottom-custom{
+    border-bottom: 1px solid white;
+}
+
+.table-response {
+    /* width: 100%; */
+    /* table-layout: fixed; */
+    word-break: break-all;
+    word-wrap: break-all;
+}
+
+body{ 
+    /* padding-top: 60px;  */
+}
+
+.site-header{
+    position: fixed;
+}
