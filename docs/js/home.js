@@ -1,6 +1,6 @@
 $(function(){
     home_func();
-    // ajax_func();
+    ajax_func();
 });
 
 function generateColors(n) {
@@ -14,10 +14,10 @@ function generateColors(n) {
 
 function home_func(){
     circleStock();
-    // circleBond(data.bonds,data.bond_total,data.rate['rate']);
-    // circleSaving(data.savings,data.saving_total,data.rate);
-    // circleOther(data.others,data.other_total,data.rate);
-    // circleTotal((data.stock_total*data.rate['rate']),(data.bond_total*data.rate['rate']),data.saving_total,data.other_total,(data.stock_total*data.rate['rate'] + data.bond_total*data.rate['rate'] + data.saving_total + data.other_total));
+    circleBond();
+    circleSaving();
+    circleOther();
+    circleTotal();
 }
 
 //Discribe Circle Chart for Stocks
@@ -69,7 +69,15 @@ function circleStock() {
 
 
 //Discribe Circle Chart for Stocks
-function circleBond(bonds,bond_total,rate){
+function circleBond(){
+    const bonds = [
+      { company_short: '日本国債', total: 500 },
+      { company_short: 'トヨタ債', total: 300 },
+      { company_short: 'ソニー債', total: 200 }
+    ];
+    const bond_total = bonds.reduce((sum, b) => sum + b.total, 0);
+    const rate = 1.05;
+
     // console.log(bonds);
     var labelList = new Array();
     var dateList = new Array();
@@ -109,7 +117,17 @@ function circleBond(bonds,bond_total,rate){
 }
 
 //Discribe Circle Chart for Stocks
-function circleSaving(savings,saving_total,rate){
+function circleSaving(){
+    const savings = [
+      { bank_short: '三菱UFJ', country_id: 1, amount: 300 },
+      { bank_short: 'みずほ', country_id: 1, amount: 200 },
+      { bank_short: 'HSBC', country_id: 2, amount: 100 }
+    ];
+    const saving_total = savings.reduce((sum, s) => {
+      return sum + (s.country_id === 1 ? s.amount : s.amount * 1.1);
+    }, 0);
+    const rate = { rate: 1.1 }; 
+
     var labelList = new Array();
     var dateList = new Array();
     var saving = 0;
@@ -154,7 +172,17 @@ function circleSaving(savings,saving_total,rate){
     );
 }
 
-function circleOther(others,other_total,rate){
+function circleOther(){
+    const others = [
+      { company_short: '金', country_id: 1, total: 200 },
+      { company_short: '銀', country_id: 1, total: 100 },
+      { company_short: '海外ETF', country_id: 2, total: 50 }
+    ];
+    const rate = { rate: 1.1 }; // 外貨換算
+    const other_total = others.reduce((sum, o) => {
+      return sum + (o.country_id === 1 ? o.total : Math.round(o.total * rate.rate));
+    }, 0);
+
     var labelList = new Array();
     var dateList = new Array();
     var saving = 0;
@@ -200,9 +228,12 @@ function circleOther(others,other_total,rate){
 }
 
 //Discribe Circle Chart for Stocks
-function circleTotal(stock,bond,saving,other,total){
-// function circleTotal(stock,bond,saving,total){
-        // console.log(other);
+function circleTotal(){
+    const stock = 600;
+    const bond = 500;
+    const saving = 400;
+    const other = 300;
+    const total = stock + bond + saving + other;
     const backgroundColors = generateColors(4);
     const data = {
         labels: ['Stock : ' + (Math.round(stock/total*100)) + '%'
@@ -215,15 +246,6 @@ function circleTotal(stock,bond,saving,other,total){
             // data: [Math.round(stock/total*100),Math.round(saving/total*100),Math.round(bond/total*100)],
             data: [Math.round(stock/total*100),Math.round(saving/total*100),Math.round(bond/total*100),Math.round(other/total*100)],
             backgroundColor: backgroundColors,
-            // // borderColor: [
-            // //     'rgb(46, 134, 193)',
-            // //     'rgb(203, 67, 53)',
-            // //     'rgb(4, 227, 31)',
-            // //     'rgb(227, 227, 4)',
-            // // ],
-            // borderWidth: 1,
-            // hoverOffset: 5,
-            // hoverBorderJoinStyle: 'miter',
             spacing: 1,
         }]
       };
@@ -301,28 +323,20 @@ function bar(){
 
 //Monthly Asset Chart
 function ajax_func(){
-    var url = location.href + '/amount';
-    ajax_action(url);
-    function ajax_action(url){
-        $.ajax({
-            haeder:{ 'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')},
-            url : url,
-            type : 'GET',
-            data : {},
-            cache : false,
-            dataType : 'json'
-        })
-        .done(function(data){
-            // console.log(data.total);
-            chart(data.total);
-        })
-        .fail(function(XMLHttpRequest, textStatus, errorThrown){
-            alert('Please reach out System Administrator');            
-        })
-    }
+    chart();
 }
 
-function chart(assets){
+function chart(){
+    const assets = [
+      { date: '2025-08-29', total_amount: 2050 },
+      { date: '2025-08-28', total_amount: 1800 },
+      { date: '2025-08-27', total_amount: 1100 },
+      { date: '2025-08-26', total_amount: 1050 },
+      { date: '2025-08-25', total_amount: 1000 },
+      { date: '2025-08-24', total_amount: 900 },
+      { date: '2025-08-23', total_amount: 1000 },
+      { date: '2025-08-22', total_amount: 1300 }
+    ];
     col_1 = 'date';
     col_2 = 'total_amount';
     // col_3 = 'stock_total';
@@ -332,14 +346,7 @@ function chart(assets){
         label_list.push(assets[i-1][col_1]);
         data_list.push(assets[i-1][col_2]);
     }
-    // console.log(assets);
-    // const labels = [
-    //     assets[4][col_1],
-    //     assets[3][col_1],
-    //     assets[2][col_1],
-    //     assets[1][col_1],
-    //     assets[0][col_1],
-    // ];
+
     const labels = label_list;
     
     const data = {
@@ -350,18 +357,7 @@ function chart(assets){
             borderColor: 'rgb(2, 12, 192)',
             data: data_list,
         },
-        // {
-        //     label: 'Stock Total',
-        //     backgroundColor: 'rgb(2, 12, 192)',
-        //     borderColor: 'rgb(255, 99, 132)',
-        //     data: [
-        //             assets[4][col_3]
-        //             ,assets[3][col_3]
-        //             ,assets[2][col_3]
-        //             ,assets[1][col_3]
-        //             ,assets[0][col_3]
-        //         ],
-        // }
+
         ]
     };
     
