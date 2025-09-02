@@ -1,6 +1,6 @@
 $(function(){
     home_func();
-    ajax_func();
+    // ajax_func();
 });
 
 function generateColors(n) {
@@ -13,29 +13,11 @@ function generateColors(n) {
 }
 
 function home_func(){
-    var url = location.href + '/circle';
-    ajax_action(url);
-    function ajax_action(url){
-        $.ajax({
-            haeder:{ 'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')},
-            url : url,
-            type : 'GET',
-            data : {},
-            cache : false,
-            dataType : 'json'
-        })
-        .done(function(data){
-            // circleStock(data.stocks,data.stock_total);
-            circleStock();
-            circleBond(data.bonds,data.bond_total,data.rate['rate']);
-            circleSaving(data.savings,data.saving_total,data.rate);
-            circleOther(data.others,data.other_total,data.rate);
-            circleTotal((data.stock_total*data.rate['rate']),(data.bond_total*data.rate['rate']),data.saving_total,data.other_total,(data.stock_total*data.rate['rate'] + data.bond_total*data.rate['rate'] + data.saving_total + data.other_total));
-        })
-        .fail(function(XMLHttpRequest, textStatus, errorThrown){
-            alert('Please reach out System Administrator');            
-        })
-    }
+    circleStock();
+    // circleBond(data.bonds,data.bond_total,data.rate['rate']);
+    // circleSaving(data.savings,data.saving_total,data.rate);
+    // circleOther(data.others,data.other_total,data.rate);
+    // circleTotal((data.stock_total*data.rate['rate']),(data.bond_total*data.rate['rate']),data.saving_total,data.other_total,(data.stock_total*data.rate['rate'] + data.bond_total*data.rate['rate'] + data.saving_total + data.other_total));
 }
 
 //Discribe Circle Chart for Stocks
